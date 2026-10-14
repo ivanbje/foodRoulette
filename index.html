@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Roulette</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>FOOD <span class="accent">ROULETTE</span></h1>
+    <button id="resetBtn" class="btn btn-reset">Reset All</button>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="flag-row" id="flagRow">
+        <!-- flag buttons injected by JS -->
+      </div>
+
+      <div class="slider-row">
+        <label class="slider-label">Difficulty Range: <span id="diffMinLabel">1</span> – <span id="diffMaxLabel">5</span></label>
+        <div class="dual-slider" id="dualSlider">
+          <div class="slider-track"></div>
+          <div class="slider-range" id="sliderRange"></div>
+          <input type="range" min="1" max="5" step="1" value="1" id="minRange" class="range min-range">
+          <input type="range" min="1" max="5" step="1" value="5" id="maxRange" class="range max-range">
+        </div>
+        <div class="slider-ticks">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        </div>
+      </div>
+
+      <button id="spinBtn" class="btn btn-spin">SPIN</button>
+    </section>
+
+    <section class="wheel-overlay" id="wheelOverlay">
+      <div class="wheel-box">
+        <div class="wheel-pointer"></div>
+        <canvas id="wheelCanvas" width="420" height="420"></canvas>
+        <div class="result-pop" id="resultPop"></div>
+        <button class="btn btn-close" id="closeWheelBtn">Close</button>
+      </div>
+      <div class="confetti-layer" id="confettiLayer"></div>
+    </section>
+
+    <section class="cards-section">
+      <h2 class="section-title">Foods <span class="hint">(click a card to cycle: Auto → Locked In → Locked Out)</span></h2>
+      <div class="cards-grid" id="cardsGrid">
+        <!-- cards injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
